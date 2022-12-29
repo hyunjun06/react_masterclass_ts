@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Outlet, Link } from "react-router-dom";
 import { database } from "../../database";
 
 function User() {
@@ -13,6 +13,9 @@ function User() {
     return (
         <div>
             <h1>Hello, {user.name}</h1>
+            <hr />
+            <Link to="followers">Followers</Link>
+            <Outlet context={userid}/>
         </div>
     );
 }
